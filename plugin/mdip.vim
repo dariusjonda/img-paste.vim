@@ -177,6 +177,10 @@ function! s:InputName()
     return name
 endfunction
 
+function! g:HtmlPasteImage(relpath)
+        execute "normal! i<img src=\"" . a:relpath . "\", width = \"400px\">"
+endfunction
+
 function! g:MarkdownPasteImage(relpath)
         execute "normal! i![" . g:mdip_tmpname[0:0]
         let ipos = getcurpos()
@@ -197,7 +201,7 @@ function! g:EmptyPasteImage(relpath)
     execute "normal! i" . a:relpath 
 endfunction
 
-let g:PasteImageFunction = 'g:MarkdownPasteImage'
+let g:PasteImageFunction = 'g:HtmlPasteImage'
 
 function! mdip#MarkdownClipboardImage()
     " detect os: https://vi.stackexchange.com/questions/2572/detect-os-in-vimscript
