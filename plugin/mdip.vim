@@ -178,7 +178,7 @@ function! s:InputName()
 endfunction
 
 function! g:HtmlPasteImage(relpath)
-        execute "normal! i<img src=\"" . a:relpath . "\", width = \"400px\">"
+        execute "normal! i<img src=\"" . a:relpath . "\" width = \"400px\">"
 endfunction
 
 function! g:MarkdownPasteImage(relpath)
